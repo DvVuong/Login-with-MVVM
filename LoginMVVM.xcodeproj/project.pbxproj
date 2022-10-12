@@ -17,6 +17,8 @@
 		8414999D28F3C497002C190F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414999C28F3C497002C190F /* User.swift */; };
 		8414999F28F3C4CA002C190F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414999E28F3C4CA002C190F /* LoginViewModel.swift */; };
 		841499A428F3D2C3002C190F /* HomeVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841499A328F3D2C3002C190F /* HomeVCViewController.swift */; };
+		842D07C428F6AD58006AD256 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D07C328F6AD58006AD256 /* TableViewController.swift */; };
+		842D07C628F6AD8D006AD256 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D07C528F6AD8D006AD256 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		8414999C28F3C497002C190F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8414999E28F3C4CA002C190F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		841499A328F3D2C3002C190F /* HomeVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCViewController.swift; sourceTree = "<group>"; };
+		842D07C328F6AD58006AD256 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		842D07C528F6AD8D006AD256 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 			children = (
 				8414998628F3C433002C190F /* LoginViewController.swift */,
 				841499A328F3D2C3002C190F /* HomeVCViewController.swift */,
+				842D07C328F6AD58006AD256 /* TableViewController.swift */,
+				842D07C528F6AD8D006AD256 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 				8414998728F3C433002C190F /* LoginViewController.swift in Sources */,
 				8414998D28F3C433002C190F /* LoginMVVM.xcdatamodeld in Sources */,
 				8414999F28F3C4CA002C190F /* LoginViewModel.swift in Sources */,
+				842D07C628F6AD8D006AD256 /* TableViewCell.swift in Sources */,
+				842D07C428F6AD58006AD256 /* TableViewController.swift in Sources */,
 				8414998328F3C433002C190F /* AppDelegate.swift in Sources */,
 				8414999D28F3C497002C190F /* User.swift in Sources */,
 				841499A428F3D2C3002C190F /* HomeVCViewController.swift in Sources */,

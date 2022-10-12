@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, UITextViewDelegate  {
         super.viewDidLoad()
         setupUI()
         onBind()
+        setupBtLogin()
     }
     private func setupUI() {
         userNameTextFiled.addTarget(self, action: #selector(didChangeTextFiled(_:)), for: .editingChanged)
@@ -37,17 +38,27 @@ class LoginViewController: UIViewController, UITextViewDelegate  {
         passworkError.textColor = .red
         emailError.isHidden = true
         emailError.textColor = .red
-        btLogin.isEnabled = false
     }
     
     private func onBind() {
         // subscription
-        viewModel.nameError.assign(to: \.text, on: nameError).store(in: &subscriptions)
+//        viewModel.onNameErrorListener = { [unowned self] in
+//            self.nameError.text = $0
+//        }
+        
+        viewModel.nameErrorPublisher.assign(to: \.text, on: nameError).store(in: &subscriptions)
         nameError.isHidden = false
-        viewModel.emailError.assign(to: \.text, on: emailError).store(in: &subscriptions)
+        viewModel.emailErrorPublisher.assign(to: \.text, on: emailError).store(in: &subscriptions)
         emailError.isHidden = false
-        viewModel.passError.assign(to: \.text, on: passworkError).store(in: &subscriptions)
+        viewModel.passErrorPublisher.assign(to: \.text, on: passworkError).store(in: &subscriptions)
         passworkError.isHidden = false
+        // Button
+        Publishers.CombineLatest3(viewModel.nameErrorPublisher.map { $0 == nil },
+                                  viewModel.passErrorPublisher.map { $0 == nil },
+                                  viewModel.emailErrorPublisher.map { $0 == nil })
+        .map { $0.0 && $0.1 && $0.2 }
+        .assign(to: \.isEnabled, on: btLogin)
+        .store(in: &subscriptions)
     }
     
     @objc private func didChangeTextFiled(_ textField: UITextField) {
@@ -61,9 +72,13 @@ class LoginViewController: UIViewController, UITextViewDelegate  {
            viewModel.emailPublisher.send(textField.text ?? "")
         }
     }
+    private func setupBtLogin() {
+        btLogin.isEnabled = false
+        btLogin.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+    }
    
     @objc private func didTapLogin() {
-       
+       print("abc")
     }
 
     
